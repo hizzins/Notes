@@ -6,9 +6,20 @@
     <description>Recent content on Hizzin&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 01 Apr 2019 11:13:26 +0900</lastBuildDate>
     
 	<atom:link href="https://hizzins.github.io/Notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git rebase로 작성자 수정하기</title>
+      <link>https://hizzins.github.io/Notes/post/20190401/</link>
+      <pubDate>Mon, 01 Apr 2019 11:13:26 +0900</pubDate>
+      
+      <guid>https://hizzins.github.io/Notes/post/20190401/</guid>
+      <description>git rebase git의 커밋 이력을 관리 할 수 있는 git rebase에 대해 정리해 보려고 합니다. git rebase는 이미 커밋한 메세지를 수정한다거나, 사소한 커밋이 여러번 발생된 경우 하나의 커밋으로 merge시킨다거나 혹은 작성자를 잘못 커밋한 경우 수정변경하는데 사용할 수 있어요.
+이중에서 오늘은 작성자를 잘못 커밋한 경우에 대해 수정하는 방법을 정리해 보려고 해요. git에는 얼마나 커밋하며 활동했는지를 한눈에 볼 수 있는 초록색 도장이 찍혀있는 표가 있는데 작성자를 해당 프로젝트의 계정이 아닌 다른 계정으로 커밋할 경우 이 초록색 도장이 찍히지 않아요.</description>
+    </item>
     
     <item>
       <title></title>
