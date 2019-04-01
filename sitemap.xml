@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://github.com/hizzins/about/</loc>
+    <loc>https://hizzins.github.io/Notes/about/</loc>
   </url>
   
   <url>
-    <loc>https://github.com/hizzins/</loc>
+    <loc>https://hizzins.github.io/Notes/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://github.com/hizzins/series/</loc>
+    <loc>https://hizzins.github.io/Notes/series/</loc>
     <priority>0</priority>
   </url>
   

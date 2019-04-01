@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hizzin&#39;s Notes</title>
-    <link>https://github.com/hizzins/</link>
+    <link>https://hizzins.github.io/Notes/</link>
     <description>Recent content on Hizzin&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://github.com/hizzins/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hizzins.github.io/Notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://github.com/hizzins/about/</link>
+      <link>https://hizzins.github.io/Notes/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/hizzins/about/</guid>
+      <guid>https://hizzins.github.io/Notes/about/</guid>
       <description>about page111</description>
     </item>
     

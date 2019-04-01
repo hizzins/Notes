@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Hizzin&#39;s Notes</title>
-    <link>https://github.com/hizzins/series/</link>
+    <link>https://hizzins.github.io/Notes/series/</link>
     <description>Recent content in Series on Hizzin&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://github.com/hizzins/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hizzins.github.io/Notes/series/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
