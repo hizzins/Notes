@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hizzins.github.io/Notes/post/20190421/</loc>
+    <lastmod>2019-04-22T09:35:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hizzins.github.io/Notes/post/20190403/</loc>
     <lastmod>2019-04-03T14:50:24+09:00</lastmod>
   </url>
@@ -18,13 +23,13 @@
   
   <url>
     <loc>https://hizzins.github.io/Notes/</loc>
-    <lastmod>2019-04-03T14:50:24+09:00</lastmod>
+    <lastmod>2019-04-22T09:35:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hizzins.github.io/Notes/post/</loc>
-    <lastmod>2019-04-03T14:50:24+09:00</lastmod>
+    <lastmod>2019-04-22T09:35:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   

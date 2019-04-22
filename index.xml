@@ -6,10 +6,22 @@
     <description>Recent content on Hizzin&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Apr 2019 14:50:24 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 09:35:59 +0900</lastBuildDate>
     
 	<atom:link href="https://hizzins.github.io/Notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>전각과 반각(일본어)</title>
+      <link>https://hizzins.github.io/Notes/post/20190421/</link>
+      <pubDate>Mon, 22 Apr 2019 09:35:59 +0900</pubDate>
+      
+      <guid>https://hizzins.github.io/Notes/post/20190421/</guid>
+      <description>일본어 작업을 할때 알아두면 좋을 반각, 전각에 대해서 알아보도록 하겠습니다.
+한자 문화권의 타이포그래피에서는 전각과 반각의 개념이 존재합니다. 전각(Full-width)은 정사각형 형태, 반각(Half-width)은 전각의 가로폭을 반으로 줄인 직사각형 형태라고 해서 이름에서부터 나타나듯이 같은 숫자라도 반각은 123456789으로 표현되며 전각은 １２３４５６７８９로 넓게 표현됩니다. 보기에는 사이즈만 다르고 같은 숫자로 보이지만 사실상 전각은 문자로 인식됩니다.
+따라서 숫자를 입력하는 input창 같은 곳에서는 전각으로 숫자를 입력시 일반 숫자(반각)로 변환해주는 작업이 반드시 필요합니다.
+ 한자와 히라가나, 한글은 언제나 전각 문자에 속한다.</description>
+    </item>
     
     <item>
       <title>Hugo 블로그 만들기</title>
