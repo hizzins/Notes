@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://hizzins.github.io/Notes/post/20190517/</loc>
+    <lastmod>2019-05-17T01:43:11+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hizzins.github.io/Notes/post/20190421/</loc>
     <lastmod>2019-04-22T09:35:59+09:00</lastmod>
   </url>
@@ -63,7 +68,19 @@
   </url>
   
   <url>
+    <loc>https://hizzins.github.io/Notes/tags/react/</loc>
+    <lastmod>2019-05-17T01:43:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://hizzins.github.io/Notes/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hizzins.github.io/Notes/tags/storybook/</loc>
+    <lastmod>2019-05-17T01:43:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
