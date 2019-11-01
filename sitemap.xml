@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hizzins.github.io/Notes/post/20191101/</loc>
+    <lastmod>2019-11-01T11:12:02+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hizzins.github.io/Notes/post/20191029/</loc>
     <lastmod>2019-10-29T09:12:02+09:00</lastmod>
   </url>
@@ -49,7 +54,7 @@
   
   <url>
     <loc>https://hizzins.github.io/Notes/</loc>
-    <lastmod>2019-10-29T09:12:02+09:00</lastmod>
+    <lastmod>2019-11-01T11:12:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -72,8 +77,20 @@
   </url>
   
   <url>
+    <loc>https://hizzins.github.io/Notes/tags/lint/</loc>
+    <lastmod>2019-11-01T11:12:02+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://hizzins.github.io/Notes/post/</loc>
-    <lastmod>2019-10-29T09:12:02+09:00</lastmod>
+    <lastmod>2019-11-01T11:12:02+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hizzins.github.io/Notes/tags/prettier/</loc>
+    <lastmod>2019-11-01T11:12:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   

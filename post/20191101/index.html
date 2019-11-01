@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="intellij prettier 적용"/>
+<meta name="twitter:description" content="intellij를 업데이트하면서 모든 세팅이 리셋되어 prettier를 다시 적용하면서 해당 내용 정리해 봅니다. 1. 프로젝트에 npm install prettier --save-dev 또는 npm install --global prettier로 prettier를 설치. intellij에디터에서 prettier플러그인을 설치.
+ Settings/Preferences(Ctrl &#43; Alt &#43; S) -&gt; Languages and Frameworks -&gt; JavaScript -&gt; Prettier 로 이동해서 아래 두가지를 설정. Node interpreter 설정.(저의 경우 C:\Program Files\nodejs\node.exe) Prettier package 설정.(global 에 설치된 prettier를 선택. ~\AppData\Roaming\npm\node_modules\prettier)
+ File Watchers 플러그인 설치. Watcher를 prettier 이름으로 생성. (Auto-save edited files to trigger the watcher에 체크)"/>
+
+    <meta property="og:title" content="intellij prettier 적용" />
+<meta property="og:description" content="intellij를 업데이트하면서 모든 세팅이 리셋되어 prettier를 다시 적용하면서 해당 내용 정리해 봅니다. 1. 프로젝트에 npm install prettier --save-dev 또는 npm install --global prettier로 prettier를 설치. intellij에디터에서 prettier플러그인을 설치.
+ Settings/Preferences(Ctrl &#43; Alt &#43; S) -&gt; Languages and Frameworks -&gt; JavaScript -&gt; Prettier 로 이동해서 아래 두가지를 설정. Node interpreter 설정.(저의 경우 C:\Program Files\nodejs\node.exe) Prettier package 설정.(global 에 설치된 prettier를 선택. ~\AppData\Roaming\npm\node_modules\prettier)
+ File Watchers 플러그인 설치. Watcher를 prettier 이름으로 생성. (Auto-save edited files to trigger the watcher에 체크)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hizzins.github.io/Notes/post/20191101/" /><meta property="article:published_time" content="2019-11-01T11:12:02&#43;09:00"/>
+<meta property="article:modified_time" content="2019-11-01T11:12:02&#43;09:00"/>
+
+
+    
+      <base href="https://hizzins.github.io/Notes/post/20191101/">
+    
+    <title>
+  intellij prettier 적용 · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="https://hizzins.github.io/Notes/post/20191101/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hizzins.github.io/Notes/css/coder.min.7f1357441dcf03bc688c7b8111c4634c9dc7d2af3e345372827ed4f6629dbd2a.css" integrity="sha256-fxNXRB3PA7xojHuBEcRjTJ3H0q8&#43;NFNygn7U9mKdvSo=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hizzins.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hizzins.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hizzins.github.io/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+          
+          
+            <li><a href="https://hizzins.github.io/Notes/tags/prettier/">prettier</a></li>
+          
+        
+          
+          
+            <li><a href="https://hizzins.github.io/Notes/tags/lint/">lint</a></li>
+          
+        
+      </ul>
+      <h1>intellij prettier 적용</h1>
+    </header>
+
+    <p>intellij를 업데이트하면서 모든 세팅이 리셋되어 prettier를 다시 적용하면서 해당 내용 정리해 봅니다.
+1. 프로젝트에 <code>npm install prettier --save-dev</code> 또는 <code>npm install --global prettier</code>로 prettier를 설치.
+intellij에디터에서 prettier플러그인을 설치.</p>
+
+<ol>
+<li>Settings/Preferences(Ctrl + Alt + S) -&gt; Languages and Frameworks -&gt; JavaScript -&gt; Prettier 로 이동해서 아래 두가지를 설정.</li>
+<li>Node interpreter 설정.(저의 경우 C:\Program Files\nodejs\node.exe)</li>
+
+<li><p>Prettier package 설정.(global 에 설치된 prettier를 선택. ~\AppData\Roaming\npm\node_modules\prettier)</p></li>
+
+<li><p>File Watchers 플러그인 설치.
+Watcher를 prettier 이름으로 생성. (Auto-save edited files to trigger the watcher에 체크)</p></li>
+
+<li><p>Keymap에서 Plug-ins &gt; Prettier &gt; Reformat with Prettier에 Ctrl + S 로 설정.
+저장시 자동으로 prettier를 실행하고 싶은 경우 추가로 설정해 줍니다.</p></li>
+</ol>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

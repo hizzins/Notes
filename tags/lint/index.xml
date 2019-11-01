@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lint on Hizzin&#39;s Notes</title>
+    <link>https://hizzins.github.io/Notes/tags/lint/</link>
+    <description>Recent content in Lint on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Nov 2019 11:12:02 +0900</lastBuildDate>
+    
+	<atom:link href="https://hizzins.github.io/Notes/tags/lint/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>intellij prettier 적용</title>
+      <link>https://hizzins.github.io/Notes/post/20191101/</link>
+      <pubDate>Fri, 01 Nov 2019 11:12:02 +0900</pubDate>
+      
+      <guid>https://hizzins.github.io/Notes/post/20191101/</guid>
+      <description>intellij를 업데이트하면서 모든 세팅이 리셋되어 prettier를 다시 적용하면서 해당 내용 정리해 봅니다. 1. 프로젝트에 npm install prettier --save-dev 또는 npm install --global prettier로 prettier를 설치. intellij에디터에서 prettier플러그인을 설치.
+ Settings/Preferences(Ctrl + Alt + S) -&amp;gt; Languages and Frameworks -&amp;gt; JavaScript -&amp;gt; Prettier 로 이동해서 아래 두가지를 설정. Node interpreter 설정.(저의 경우 C:\Program Files\nodejs\node.exe) Prettier package 설정.(global 에 설치된 prettier를 선택. ~\AppData\Roaming\npm\node_modules\prettier)
+ File Watchers 플러그인 설치. Watcher를 prettier 이름으로 생성. (Auto-save edited files to trigger the watcher에 체크)</description>
+    </item>
+    
+  </channel>
+</rss>
