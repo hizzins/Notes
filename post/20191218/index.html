@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Shin Heejin">
+    <meta name="description" content="Heejin&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google oAuth를 이용한 가입및 로그인 구현"/>
+<meta name="twitter:description" content="보안에도 유리하고 사용자 경험에도 편리하고 좋은 구글 oauth 가입 및 로그인을 구현하는 방법에 대해 정리해 보려고 합니다. 구글 로그인을 통해 얻은 정보(이름, 이메일, 토큰등등)를 이용해서 서비스의 로그인 및 가입을 구현하고자 하는게 핵심입니다. &gt;OAuth는 로그인의 개념이 아닌 단지 서비스를 이용할 수 있는 사용자인지 인증(Authentication)하는것과 접근할 수 있는 서비스를 제한할 수 있는 권한부여(Authorization)를 관리하는 개념.
+사전작업 구글 oauth를 구현하기에 앞서 먼저 구글 콘솔페이지에서 project와 client ID를 생성해야합니다. 방법에 대한 자세한 설명은 생략하도록 하겠습니다."/>
+
+    <meta property="og:title" content="Google oAuth를 이용한 가입및 로그인 구현" />
+<meta property="og:description" content="보안에도 유리하고 사용자 경험에도 편리하고 좋은 구글 oauth 가입 및 로그인을 구현하는 방법에 대해 정리해 보려고 합니다. 구글 로그인을 통해 얻은 정보(이름, 이메일, 토큰등등)를 이용해서 서비스의 로그인 및 가입을 구현하고자 하는게 핵심입니다. &gt;OAuth는 로그인의 개념이 아닌 단지 서비스를 이용할 수 있는 사용자인지 인증(Authentication)하는것과 접근할 수 있는 서비스를 제한할 수 있는 권한부여(Authorization)를 관리하는 개념.
+사전작업 구글 oauth를 구현하기에 앞서 먼저 구글 콘솔페이지에서 project와 client ID를 생성해야합니다. 방법에 대한 자세한 설명은 생략하도록 하겠습니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hizzins.github.io/Notes/post/20191218/" /><meta property="article:published_time" content="2019-12-18T11:37:57&#43;09:00"/>
+<meta property="article:modified_time" content="2019-12-18T11:37:57&#43;09:00"/>
+
+
+    
+      <base href="https://hizzins.github.io/Notes/post/20191218/">
+    
+    <title>
+  Google oAuth를 이용한 가입및 로그인 구현 · Hizzin&#39;s Notes
+</title>
+
+    
+      <link rel="canonical" href="https://hizzins.github.io/Notes/post/20191218/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://hizzins.github.io/Notes/css/coder.min.7f1357441dcf03bc688c7b8111c4634c9dc7d2af3e345372827ed4f6629dbd2a.css" integrity="sha256-fxNXRB3PA7xojHuBEcRjTJ3H0q8&#43;NFNygn7U9mKdvSo=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://hizzins.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://hizzins.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.49.2" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://hizzins.github.io/Notes/">
+      Hizzin&#39;s Notes
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/Notes/post/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://hizzins.github.io/playground">Playground</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+<section class="container page">
+  <article>
+    <header>
+      <ul id="tags">
+        
+          
+          
+            <li><a href="https://hizzins.github.io/Notes/tags/oauth/">oAuth</a></li>
+          
+        
+          
+          
+            <li><a href="https://hizzins.github.io/Notes/tags/google-login/">google login</a></li>
+          
+        
+          
+          
+            <li><a href="https://hizzins.github.io/Notes/tags/google-oauth/">google oAuth</a></li>
+          
+        
+      </ul>
+      <h1>Google oAuth를 이용한 가입및 로그인 구현</h1>
+    </header>
+
+    
+
+<p>보안에도 유리하고 사용자 경험에도 편리하고 좋은 구글 oauth 가입 및 로그인을 구현하는 방법에 대해 정리해 보려고 합니다. 구글 로그인을 통해 얻은 정보(이름, 이메일, 토큰등등)를 이용해서 서비스의 로그인 및 가입을 구현하고자 하는게 핵심입니다.
+&gt;OAuth는 로그인의 개념이 아닌 단지 서비스를 이용할 수 있는 사용자인지 인증(Authentication)하는것과 접근할 수 있는 서비스를 제한할 수 있는 권한부여(Authorization)를 관리하는 개념.</p>
+
+<h2 id="사전작업">사전작업</h2>
+
+<p>구글 oauth를 구현하기에 앞서 먼저 구글 콘솔페이지에서 project와 client ID를 생성해야합니다. 방법에 대한 자세한 설명은 생략하도록 하겠습니다. (<a href="https://gomcine.tistory.com/entry/%EA%B5%AC%EA%B8%80-API-%EC%82%AC%EC%9A%A9%EB%B2%95-%ED%82%A4-%EB%B0%9C%EA%B8%89-oauth-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC#TOC1">참조</a>)
+참고로 저는 프로젝트에서 백엔드에서 client ID를 관리하여 서버에서 받아서 사용하였습니다.</p>
+
+<h2 id="메타태그를-이용한-간편구현">메타태그를 이용한 간편구현</h2>
+
+<ol>
+<li>구글 platform 라이브러리를 include합니다.
+onload=init 파라미터는 initplatform.js가 로드되면 init함수를 호출하겠다는 의미입니다.
+<code>
+&lt;script src=&quot;https://apis.google.com/js/platform.js?onload=init&quot; async defer&gt;&lt;/script&gt;
+</code></li>
+<li>google-signin-client_id 메타요소를 사용하여 client ID를 지정해줍니다.
+<code>
+&lt;meta name=&quot;google-signin-client_id&quot; content=&quot;YOUR_CLIENT_ID.apps.googleusercontent.com&quot;&gt;
+</code></li>
+<li>자동으로 렌더링되는 구글 로그인 버튼을 사용합니다.
+사용자의 로그인 상태 및 버튼 디자인이 자동으로 구성됩니다.
+로그인 버튼을 커스터마이징해야하는 경우 다른 방법으로 구현할 수 있습니다. 좀 이따 알아보도록 할게요.
+data-onSignIn속성에는 로그인 성공시 콜백함수를 할당해줍니다.</li>
+</ol>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;div class=&#34;g-signin2&#34; data-onsuccess=&#34;onSignIn&#34;&gt;&lt;/div&gt;</pre></div>
+<ol>
+<li><p>구글 정보 획득
+GoogleAuth.signOut() 메서드로 사용자 정보를 가져올 수 있습니다.
+getId()로 얻은 구글 id를 서버에 보내서 로그인한 사용자를 확인하는데 사용하거나 하면 안됩니다.  반드시 토큰을 사용해야합니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">function onSignIn(googleUser) {  
+var profile = googleUser.getBasicProfile();  
+console.log(&#39;ID: &#39; + profile.getId()); // Do not send to your backend! Use an ID token instead.  
+console.log(&#39;Name: &#39; + profile.getName());  
+console.log(&#39;Image URL: &#39; + profile.getImageUrl());  console.log(&#39;Email: &#39; + profile.getEmail()); // This is null if the &#39;email&#39; scope is not present.}</pre></div></li>
+
+<li><p>로그아웃
+로그아웃은 아래와 같이 구현할 수 있습니다.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;a href=&#34;#&#34; onclick=&#34;signOut();&#34;&gt;Sign out&lt;/a&gt;
+&lt;script&gt;  
+function signOut() {    var auth2 = gapi.auth2.getAuthInstance();    auth2.signOut().then(function () {      console.log(&#39;User signed out.&#39;);    });  }
+&lt;/script&gt;</pre></div></li>
+</ol>
+
+<h2 id="구글인증-api로-구현">구글인증 API로 구현</h2>
+
+<p>저는 버튼디자인을 좀 더 자유롭게 구현할 수 있는 방법으로 실제 프로젝트에 구현하였습니다.</p>
+
+<ol>
+<li>메타태그로 구현하는 방법과 동일합니다.</li>
+<li>구글인증 초기화 하는 함수를 아래와 같이 작성해줍니다.
+코드 설명은 주석을 참고해주세요:)
+<code>
+function init(){  
+console.log('init');  
+// platform.js 의 기능 중에 auth2를 사용하며 auth2가 로드되면 두번째 인자의 함수가 실행.
+gapi.load('auth2', function() {  
+	  window.gauth = gapi.auth2.init({  
+		  client_id:'구글 콘솔에서 생성한 client_id'  
+});
+		// 초기화가 됐을때 성공하면 첫번째 인자의 함수가 실행.
+		// 실패하면 두번째 인자의 함수가 실행.
+		gauth.then(function() {  
+		  console.log('google auth success');  
+		  checkLoginStatus();  
+		}, function() {  
+		  console.log('google auth fail');  
+		});
+});  
+}
+// 이렇게 하면 초기화까지 코드가 작성되어 페이지 새로고침시 'google auth success'가 나오면 정상동작입니다.
+</code></li>
+<li>구글 로그인창 이벤트
+구글 로그인창을 열어주는 이벤트입니다.
+prompt옵션에 select_account값을 주어 자동으로 로그인되지 않고 항상 로그인창에서 사용자가 로그인을 명시적으로 하게끔 설정했습니다.
+해당 옵션값을 주지 않으면 구글 로그인창이 열리지 않고 자동으로 로그인 되는 경우가 발생합니다.
+<code>
+gauth.signIn({ prompt: 'select_account' }).then(function() {// 로그인 성공 });
+</code></li>
+
+<li><p>로그인이 성공되면 아래와 같은 메서드들로 로그인 사용자 정보를 가져올 수 있습니다. 로그인시에는 이메일정보와 토큰값을 우리(프로젝트) 서버에 보내서 구현하고 가입에는 이메일, 이름, 토큰값등을 서버에 보내서 구현할 수 있습니다.</p>
+
+<h3 id="gauth-currentuser-get">gauth.currentUser.get()</h3>
+
+<p>GoogleUser 값을 구할 수 있다.</p></li>
+</ol>
+
+<h3 id="googleuser-getbasicprofile">GoogleUser.getBasicProfile()</h3>
+
+<p>로그인한 사용자의 프로필 정보를 구할 수 있다.
+아래의 메서드를 이용해 profile 정보를 구할 수 있다.
+-   BasicProfile.getId()
+-   BasicProfile.getName()
+-   BasicProfile.getGivenName()
+-   BasicProfile.getFamilyName()
+-   BasicProfile.getImageUrl()
+-   BasicProfile.getEmail()</p>
+
+<h3 id="googleuser-getauthresponse-includeauthorizationdata">GoogleUser.getAuthResponse(includeAuthorizationData)</h3>
+
+<p>해당 메서드를 이용해 토큰값을 사용할 수 있다.
+googleUser.getAuthResponse().id_token으로 토큰값을 구할 수 있다.</p>
+
+<p>참조</p>
+
+<blockquote>
+<p><a href="https://developers.google.com/identity/sign-in/web/sign-in">https://developers.google.com/identity/sign-in/web/sign-in</a>
+<a href="https://opentutorials.org/course/3424/22235">https://opentutorials.org/course/3424/22235</a></p>
+</blockquote>
+
+  </article>
+</section>
+
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Copyright(c)2019 신희진 All rights reserved. </p>
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

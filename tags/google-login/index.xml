@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Login on Hizzin&#39;s Notes</title>
+    <link>https://hizzins.github.io/Notes/tags/google-login/</link>
+    <description>Recent content in Google Login on Hizzin&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Dec 2019 11:37:57 +0900</lastBuildDate>
+    
+	<atom:link href="https://hizzins.github.io/Notes/tags/google-login/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google oAuth를 이용한 가입및 로그인 구현</title>
+      <link>https://hizzins.github.io/Notes/post/20191218/</link>
+      <pubDate>Wed, 18 Dec 2019 11:37:57 +0900</pubDate>
+      
+      <guid>https://hizzins.github.io/Notes/post/20191218/</guid>
+      <description>보안에도 유리하고 사용자 경험에도 편리하고 좋은 구글 oauth 가입 및 로그인을 구현하는 방법에 대해 정리해 보려고 합니다. 구글 로그인을 통해 얻은 정보(이름, 이메일, 토큰등등)를 이용해서 서비스의 로그인 및 가입을 구현하고자 하는게 핵심입니다. &amp;gt;OAuth는 로그인의 개념이 아닌 단지 서비스를 이용할 수 있는 사용자인지 인증(Authentication)하는것과 접근할 수 있는 서비스를 제한할 수 있는 권한부여(Authorization)를 관리하는 개념.
+사전작업 구글 oauth를 구현하기에 앞서 먼저 구글 콘솔페이지에서 project와 client ID를 생성해야합니다. 방법에 대한 자세한 설명은 생략하도록 하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
